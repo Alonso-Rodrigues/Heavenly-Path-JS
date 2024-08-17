@@ -22,5 +22,13 @@ main {
     height: 95vb;
     width: 95vw;
     background-image: url(../img/backgroundGame.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
 }
+
+/* .player {
+    height: 30%;
+    width: 15%;
+} */
