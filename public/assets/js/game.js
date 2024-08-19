@@ -52,5 +52,43 @@
 
 // loop(); // Inicie o loop
 
+// var player = document.querySelector('.player');
+// document.addEventListener('mousemove', function (mouse) {
+//     let xPosition = mouse.pageX - 50;
+//     let yPosition = mouse.pageY - 50;
+
+//     player.style.left = xPosition + 'px'
+//     player.style.top = yPosition + 'px'
+
+//     console.log(mouse.pageX, mouse.pageY)
+// });
 
 
+var player = document.querySelector('.player');
+var gameBoard = document.querySelector('main');
+
+document.addEventListener('mousemove', function (mouse) {
+    // Posição do mouse
+    let xPosition = mouse.pageX - player.clientWidth / 2;
+    let yPosition = mouse.pageY - player.clientHeight / 2;
+
+    // Dimensões da área do jogo
+    let boardRect = gameBoard.getBoundingClientRect();
+
+    // Restrição para não sair da área do gameBoard
+    if (xPosition < boardRect.left) {
+        xPosition = boardRect.left;
+    } else if (xPosition + player.clientWidth > boardRect.right) {
+        xPosition = boardRect.right - player.clientWidth;
+    }
+
+    if (yPosition < boardRect.top) {
+        yPosition = boardRect.top;
+    } else if (yPosition + player.clientHeight > boardRect.bottom) {
+        yPosition = boardRect.bottom - player.clientHeight;
+    }
+
+    // Atualiza a posição do player
+    player.style.left = xPosition + 'px';
+    player.style.top = yPosition + 'px';
+});

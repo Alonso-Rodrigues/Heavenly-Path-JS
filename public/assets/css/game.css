@@ -38,3 +38,13 @@ canvas {
     height: 30%;
     width: 15%;
 } */
+
+.player {
+    position: absolute;
+    width: 10%;
+    /* Ajuste o tamanho conforme necessário */
+    height: 20%;
+    /* Ajuste o tamanho conforme necessário */
+    pointer-events: none;
+    /* Garante que a imagem não capture eventos do mouse */
+}
