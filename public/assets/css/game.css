@@ -34,11 +34,6 @@ canvas {
     border: red solid;
 }
 
-/* .player {
-    height: 30%;
-    width: 15%;
-} */
-
 .player {
     position: absolute;
     width: 10%;
