@@ -1,12 +1,21 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const iconElement = document.querySelector("nav");
-    const ulElement = document.querySelector("ul");
-  
-    iconElement.addEventListener("click", function () {
+  const iconElement = document.querySelector("nav");
+  const ulElement = document.querySelector("ul");
+  const audioElement = document.getElementById("background-music");
 
-      ulElement.classList.toggle("open");
-    });
+  iconElement.addEventListener("click", function () {
+
+    ulElement.classList.toggle("open");
   });
+
+  audioElement.loop = true;
+  document.addEventListener("click", function () {
+    audioElement.play();
+  });
+
+});
+
+
 
 
