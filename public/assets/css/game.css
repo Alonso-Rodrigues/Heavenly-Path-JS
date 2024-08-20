@@ -43,3 +43,13 @@ canvas {
     pointer-events: none;
     /* Garante que a imagem não capture eventos do mouse */
 }
+
+body {
+    cursor: none;
+    /* Esconde o ponteiro do mouse em toda a página */
+}
+
+main {
+    cursor: none;
+    /* Esconde o ponteiro do mouse apenas dentro da área do main */
+}

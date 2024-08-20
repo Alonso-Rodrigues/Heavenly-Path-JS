@@ -20,7 +20,8 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    ;
     align-items: center;
     height: 95vb;
     width: 95vw;
@@ -50,9 +51,14 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
-    padding: 10%;
     animation: 1.25s bounce infinite;
 }
+
+.container:hover {
+    cursor: pointer;
+    padding: 30%;
+}
+
 ul {
     height: 200px;
     width: 400px;
@@ -103,7 +109,7 @@ li a:hover {
 
 a {
     color: #f0ffff;
-    font-size:larger;
+    font-size: larger;
     font-weight: 600;
     text-decoration: none;
 }
