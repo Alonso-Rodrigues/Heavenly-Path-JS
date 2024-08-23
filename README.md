@@ -2,7 +2,7 @@
     💡 ExpasionGame
 </h1>
 <h2>
-  📩 ExpasionGame features a dynamic scoring system and three difficulty levels.
+  📩 Game with a dynamic scoring system and three difficulty levels.
 </h2>
 
 ## 🚨About:
