@@ -24,7 +24,7 @@ main {
     align-items: center;
     height: 95vb;
     width: 95vw;
-    background-image: url(/public/assets/img/backgroundHome.gif);
+    background-image: url(../img/backgroundHome.gif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,7 +46,7 @@ header {
     align-items: center;
     height: 200px;
     width: 200px;
-    background-image: url(/public/assets/img/menu.gif);
+    background-image: url(../img/menu.gif);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
