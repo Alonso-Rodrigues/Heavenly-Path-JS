@@ -15,6 +15,7 @@ body {
 }
 
 main {
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,6 +27,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
+    cursor: none;
 }
 
 .player {
@@ -38,12 +40,30 @@ main {
     /* Garante que a imagem não capture eventos do mouse */
 }
 
-body {
-    cursor: none;
-    /* Esconde o ponteiro do mouse em toda a página */
+
+
+.lifeNav {
+    border: solid red;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+    top: 50px;
+    left: 80px;
+    height: 150px;
+    width: 250px;
+
 }
 
-main {
-    cursor: none;
-    /* Esconde o ponteiro do mouse apenas dentro da área do main */
+.score {
+    border: solid orange;
+    height: 30px;
+    width: 100px;
+}
+
+.lifeCounter {
+    border: solid orange;
+    height: 30px;
+    width: 100px;
 }
