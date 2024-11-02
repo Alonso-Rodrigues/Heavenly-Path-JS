@@ -1,5 +1,5 @@
 <h1>
-    ExpasionGame 💡  
+    Heavenly Path 💡  
 </h1>
 <h2>
     Game with a dynamic scoring system and three difficulty levels 📩         
