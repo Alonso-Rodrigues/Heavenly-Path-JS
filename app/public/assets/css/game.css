@@ -41,29 +41,38 @@ main {
 }
 
 
-
-.lifeNav {
+.lifeBar {
     border: solid red;
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items:flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Duas colunas iguais */
+    grid-template-rows: 1fr 1fr;   /* Duas linhas automáticas */
     top: 50px;
     left: 80px;
     height: 150px;
     width: 250px;
-
 }
 
 .score {
     border: solid orange;
-    height: 30px;
-    width: 100px;
+    height: 60px;
+    width: 120px;
+    grid-column: 1 / 2;
+    /* Primeira coluna */
 }
 
 .lifeCounter {
     border: solid orange;
-    height: 30px;
+    height: 70px;
+    width: 70px;
+    grid-column: 3 / 3;
+    /* Segunda coluna, ao lado do score */
+}
+
+.lifeFace {
+    border: solid blue;
+    height: 100px;
     width: 100px;
+    grid-column: 2 / 3;
+    /* Ocupa as duas colunas abaixo de score e lifeCounter */
 }
