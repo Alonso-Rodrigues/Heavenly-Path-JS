@@ -15,7 +15,6 @@ body {
 }
 
 main {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,46 +32,50 @@ main {
 .player {
     position: absolute;
     width: 10%;
-    /* Ajuste o tamanho conforme necessário */
     height: 20%;
-    /* Ajuste o tamanho conforme necessário */
     pointer-events: none;
-    /* Garante que a imagem não capture eventos do mouse */
 }
 
 
 .lifeBar {
-    border: solid red;
     position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Duas colunas iguais */
-    grid-template-rows: 1fr 1fr;   /* Duas linhas automáticas */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    border: solid 0.5mm rgba(255, 255, 255, 0.7);
     top: 50px;
-    left: 80px;
-    height: 150px;
-    width: 250px;
+    left: 80px
 }
 
 .score {
-    border: solid orange;
-    height: 60px;
-    width: 120px;
-    grid-column: 1 / 2;
-    /* Primeira coluna */
+    height: 50px;
+    width: 150px;
+    background-image: url(../img/lifeScore/life5x.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .lifeCounter {
-    border: solid orange;
-    height: 70px;
-    width: 70px;
-    grid-column: 3 / 3;
-    /* Segunda coluna, ao lado do score */
+    height: 50px;
+    width: 50px;
+    background-image: url(../img/heartScore/heart1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .lifeFace {
-    border: solid blue;
-    height: 100px;
-    width: 100px;
-    grid-column: 2 / 3;
-    /* Ocupa as duas colunas abaixo de score e lifeCounter */
+    height: 120px;
+    width: 80px;
+    background-image: url(../img/game/health.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
