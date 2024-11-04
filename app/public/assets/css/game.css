@@ -37,7 +37,7 @@ body {
     pointer-events: none;
 }
 
-/* ---------- |Fife Bar| ----------*/
+/* ---------- |Life Bar| ----------*/
 .lifeBar {
     position: absolute;
     display: flex;
