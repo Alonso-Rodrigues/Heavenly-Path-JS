@@ -3,14 +3,14 @@ var gameBoard = document.querySelector('main');
 var lastMouseX = 0;
 
 document.addEventListener('mousemove', function (mouse) {
-    // Posição do mouse
+    // Mouse position
     let xPosition = mouse.pageX - player.clientWidth / 2;
     let yPosition = mouse.pageY - player.clientHeight / 2;
 
-    // Dimensões da área do jogo
+    // Game area dimensions
     let boardRect = gameBoard.getBoundingClientRect();
 
-    // Restrição para não sair da área do gameBoard
+    // Restriction to not leave the gameBoard area
     if (xPosition < boardRect.left) {
         xPosition = boardRect.left;
     } else if (xPosition + player.clientWidth > boardRect.right) {
@@ -23,20 +23,20 @@ document.addEventListener('mousemove', function (mouse) {
         yPosition = boardRect.bottom - player.clientHeight;
     }
 
-    // Atualiza a posição do player
+    // Update the player position
     player.style.left = xPosition + 'px';
     player.style.top = yPosition + 'px';
 
-    // Verifica se o mouse se moveu para a direita ou esquerda
+    // Check if the mouse moved right or left
     if (mouse.pageX > lastMouseX) {
-        // Mouse movendo para a direita, vira a imagem para a direita
+        // Mouse moving to the right, flips the image to the right
         player.style.transform = 'scaleX(-1)';
     } else if (mouse.pageX < lastMouseX) {
-        // Mouse movendo para a esquerda, vira a imagem para a esquerda
+        // Mouse moving to the right, flips the image to the left
         player.style.transform = 'scaleX(1)';
     }
 
-    // Atualiza a última posição do mouse
+    // Update the last mouse position
     lastMouseX = mouse.pageX;
 });
 
