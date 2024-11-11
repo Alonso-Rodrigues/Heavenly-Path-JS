@@ -5,13 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const lifeCounter = document.querySelector('.lifeCounter');
   const lifeFace = document.querySelector('.lifeFace');
 
-  function takeDamage() {
-    if (life > 0) {
-      life--;
-      updateLifeImages();
-    }
-  }
-
   function updateLifeImages() {
     switch (life) {
       case 5:
@@ -47,10 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key === ' ') {
-      takeDamage();
+  // Função de dano
+  function takeDamage() {
+    if (life > 0) {
+      life--;
+      updateLifeImages();  // Atualiza as imagens quando o jogador toma dano
     }
-  });
+  }
+
+  window.takeDamage = takeDamage; // Exporte a função takeDamage para ser acessada em outros scripts
 });
-``
+
+
