@@ -40,15 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Função de dano
+  // Damage function
   function takeDamage() {
     if (life > 0) {
       life--;
-      updateLifeImages();  // Atualiza as imagens quando o jogador toma dano
+      updateLifeImages();  // Updates images when player takes damage
     }
   }
 
-  window.takeDamage = takeDamage; // Exporte a função takeDamage para ser acessada em outros scripts
+  window.takeDamage = takeDamage; // Export the takeDamage function to be accessed in other scripts
 });
 
 

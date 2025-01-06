@@ -11,13 +11,13 @@ window.onload = function () {
   const gameBoardWidth = gameBoard.clientWidth;
   let lastObstacleTime = 0;
 
-  // Função para verificar se o jogo acabou
+  // Function to check if the game is over
   function isGameOver() {
-    return window.life === 0;  // Verifica se a vida chegou a zero
+    return window.life === 0; // Checks if the life count has reached zero
   }
 
   function createObstacle() {
-    if (isGameOver()) return;  // Não cria mais obstáculos se o jogo acabou
+    if (isGameOver()) return; // Stops creating obstacles if the game is over
 
     const obstacle = document.createElement('div');
     obstacle.classList.add('obstacle');
@@ -29,22 +29,22 @@ window.onload = function () {
     const speed = Math.random() * 3 + 2;
 
     function fall() {
-      if (isGameOver()) return;  // Não faz a queda dos obstáculos se o jogo acabou
+      if (isGameOver()) return; // Stops obstacle movement if the game is over
 
       const currentY = parseFloat(obstacle.style.top);
       obstacle.style.top = `${currentY + speed}px`;
 
-      // Detecção de colisão
+      // Collision detection
       if (detectCollision(player, obstacle)) {
-        takeDamage();  // Chama a função takeDamage do damage.js para diminuir a vida
+        takeDamage(); // Calls the takeDamage function from damage.js to decrease life
         obstacle.remove();
 
-        // Verifica se o jogador perdeu todas as vidas
+        // Checks if the player has lost all lives
         if (window.life === 0) {
           console.log("Game Over! Redirecting to gameOver.html...");
           setTimeout(() => {
-            window.location.href = "gameOver.html";  // Redireciona após 1 segundo
-          }, 500);  // Redirecionamento mais rápido, sem a necessidade do alerta
+            window.location.href = "gameOver.html"; // Redirects after 1 second
+          }, 500); // Faster redirection, no alert needed
         }
 
       } else if (currentY + obstacle.clientHeight >= gameBoardHeight - 2) {
@@ -69,7 +69,7 @@ window.onload = function () {
   }
 
   function generateObstacles(timestamp) {
-    if (isGameOver()) return;  // Não gera mais obstáculos se o jogo acabou
+    if (isGameOver()) return; // Stops generating obstacles if the game is over
 
     const timeSinceLastObstacle = timestamp - lastObstacleTime;
 
