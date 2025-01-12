@@ -40,11 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function checkGameOver() {
+    if (life <= 0) {
+      window.location.href = 'gameOver.html'; // Redirects to the game over page
+    }
+  }
+
   // Damage function
   function takeDamage() {
     if (life > 0) {
       life--;
       updateLifeImages();  // Updates images when player takes damage
+      checkGameOver();  // Invokes the game over check
     }
   }
 
