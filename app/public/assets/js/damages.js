@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   let life = 5;
+  let elapsedPoint = 0;
+  let intervalId;
 
   const lifeScore = document.querySelector('.score');
   const lifeCounter = document.querySelector('.lifeCounter');
   const lifeFace = document.querySelector('.lifeFace');
+  const pointsDisplay = document.querySelector('.points');
 
+  // Updates life-related images based on the current life value
   function updateLifeImages() {
     switch (life) {
       case 5:
@@ -40,13 +44,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Updates the elapsed points (score)
+  function updatePoints() {
+    elapsedPoint++;
+    pointsDisplay.textContent = `Points: ${elapsedPoint}`;
+  }
+
+  // Starts the points counter, updating every second
+  function startPoints() {
+    intervalId = setInterval(updatePoints, 1000);
+  }
+
+  // Stops the points counter
+  function stopPoints() {
+    clearInterval(intervalId);
+  }
+
+  // Checks if the game is over and redirects to the Game Over page
   function checkGameOver() {
     if (life <= 0) {
-      window.location.href = 'gameOver.html'; // Redirects to the game over page
+      stopPoints(); // Stops the counter when all lives are lost
+      setTimeout(() => {
+        window.location.href = 'gameOver.html'; // Redirects to the Game Over page
+      }, 3000);
     }
   }
 
-  // Damage function
+  // Reduces the player's life by 1 and updates the game state
   function takeDamage() {
     if (life > 0) {
       life--;
@@ -55,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  window.takeDamage = takeDamage; // Export the takeDamage function to be accessed in other scripts
+  window.takeDamage = takeDamage; // Exports the takeDamage function to be accessed in other scripts
+
+  startPoints();
 });
-
-
