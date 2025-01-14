@@ -1,0 +1,16 @@
+{
+  "name": "heavenly_path",
+  "version": "1.0.0",
+  "description": "<h1>\r     Heavenly Path 💡  \r </h1>\r <h2>\r     Game with a dynamic scoring system and three difficulty levels 📩         \r </h2>",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./ -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
