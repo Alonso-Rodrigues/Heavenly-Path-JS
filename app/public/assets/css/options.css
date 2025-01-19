@@ -41,15 +41,14 @@ header {
 }
 
 .options {
-  border: solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 50%;
   width: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: black solid 0.3px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: black solid 0.1px;
   border-radius: 5px;
 }
 

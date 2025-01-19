@@ -1,21 +1,24 @@
 window.onload = function () {
   const gameBoard = document.querySelector('.game-board');
   const player = document.querySelector('.player');
+  const gameBoardHeight = gameBoard.clientHeight;
+  const gameBoardWidth = gameBoard.clientWidth;
+  let lastObstacleTime = 0;
+  // Retrieve the difficulty stored in localStorage
+  const difficulty = localStorage.getItem('difficulty') || 'easy';
 
+  // Check if the game board and player exist before continuing
   if (!gameBoard || !player) {
     console.error('Element .game-board or .player not found!');
     return;
   }
-
-  const gameBoardHeight = gameBoard.clientHeight;
-  const gameBoardWidth = gameBoard.clientWidth;
-  let lastObstacleTime = 0;
 
   // Function to check if the game is over
   function isGameOver() {
     return window.life === 0; // Checks if the life count has reached zero
   }
 
+  // Function to create an obstacle element.
   function createObstacle() {
     if (isGameOver()) return; // Stops creating obstacles if the game is over
 
@@ -26,8 +29,21 @@ window.onload = function () {
     obstacle.style.top = `0px`;
     gameBoard.appendChild(obstacle);
 
-    const speed = Math.random() * 3 + 2;
+    // Set speed based on difficulty
+    let speed;
+    switch (difficulty) {
+      case 'medium':
+        speed = Math.random() * 6 + 8; // Average speed
+        break;
+      case 'hard':
+        speed = Math.random() * 8 + 10; // High speed
+        break;
+      default:
+        speed = Math.random() * 3 + 2; // Easy speed
+        break;
+    }
 
+    // Function to make the obstacle fall.
     function fall() {
       if (isGameOver()) return; // Stops obstacle movement if the game is over
 
@@ -56,6 +72,7 @@ window.onload = function () {
     fall();
   }
 
+  // Function to detect collision between the player and an obstacle
   function detectCollision(player, obstacle) {
     const playerRect = player.getBoundingClientRect();
     const obstacleRect = obstacle.getBoundingClientRect();
@@ -67,7 +84,7 @@ window.onload = function () {
       playerRect.right < obstacleRect.left
     );
   }
-
+  // Function to generate obstacles at random intervals
   function generateObstacles(timestamp) {
     if (isGameOver()) return; // Stops generating obstacles if the game is over
 
