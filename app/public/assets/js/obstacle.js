@@ -4,7 +4,6 @@ window.onload = function () {
   const gameBoardHeight = gameBoard.clientHeight;
   const gameBoardWidth = gameBoard.clientWidth;
   let lastObstacleTime = 0;
-  // Retrieve the difficulty stored in localStorage
   const difficulty = localStorage.getItem('difficulty') || 'easy';
 
   // Check if the game board and player exist before continuing
@@ -84,6 +83,7 @@ window.onload = function () {
       playerRect.right < obstacleRect.left
     );
   }
+  
   // Function to generate obstacles at random intervals
   function generateObstacles(timestamp) {
     if (isGameOver()) return; // Stops generating obstacles if the game is over

@@ -3,9 +3,9 @@ document.getElementById('difficultyForm').addEventListener('submit', function (e
 
   const selectedDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
 
-  // Salvar a dificuldade no localStorage ou passar como parâmetro na URL
+  // Save the difficulty in localStorage or pass it as a parameter in the URL
   localStorage.setItem('difficulty', selectedDifficulty);
 
-  // Redirecionar para o jogo
+  // Redirect to the game
   window.location.href = "../pages/game.html";
 });
