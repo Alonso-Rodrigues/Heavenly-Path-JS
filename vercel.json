@@ -2,7 +2,11 @@
   "rewrites": [
     {
       "source": "/pages/(.*)",
-      "destination": "/app/pages/$1"
+      "destination": "/pages/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
