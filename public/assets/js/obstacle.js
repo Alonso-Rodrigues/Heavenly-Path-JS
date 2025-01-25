@@ -23,7 +23,19 @@ window.onload = function () {
 
     const obstacle = document.createElement('div');
     obstacle.classList.add('obstacle');
-    const randomX = Math.floor(Math.random() * (gameBoardWidth - 50));
+
+    // Divida a largura do gameBoard em seções
+    // const sections = 2; // Número de seções desejadas
+    // const sectionWidth = gameBoardWidth / sections;
+
+    // Gera uma posição X aleatória dentro da largura do gameBoard
+    const randomX = Math.random() * (gameBoardWidth - obstacle.clientHeight);
+
+    // Calcule uma posição X aleatória dentro da seção escolhida
+    // const minX = randomSection * sectionWidth;
+    // const maxX = minX + sectionWidth - obstacle.clientWidth;
+    // const randomX = Math.random() * (maxX - minX) + minX;
+
     obstacle.style.left = `${randomX}px`;
     obstacle.style.top = `0px`;
     gameBoard.appendChild(obstacle);
@@ -59,7 +71,7 @@ window.onload = function () {
           console.log("Game Over! Redirecting to gameOver.html...");
           setTimeout(() => {
             window.location.href = "gameOver.html"; // Redirects after 1 second
-          }, 500); // Faster redirection, no alert needed
+          }, 300); // Faster redirection, no alert needed
         }
 
       } else if (currentY + obstacle.clientHeight >= gameBoardHeight - 2) {
